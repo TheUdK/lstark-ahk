@@ -23,7 +23,7 @@
 */
 
 KEY_TO_PRESS := "i" ; The key to press to prevent appearing as AFK
-                    ; I recommend to set this as one of your flask
+                    ; I recommend to set this as the inventory key
 
 PAUSE_SCRIPT_WHILE_GAME_ACTIVE := True ; True       The script will not press the anti-afk key while the game window is active
                                        ; False      The script will press the anti-afk key whether the game window is active or not
@@ -78,7 +78,7 @@ Loop, Parse, POEGameExeList,% ","
 
 funcObj := Func("AntiAfk").Bind()
 ; Random(483, 852)*1000
-SetTimer,% funcObj,% "-" Random(39, 60)*1000 ; between 8 and 14 mins
+SetTimer,% funcObj,% "-" Random(483, 852)*1000 ; between 8 and 14 mins
 return
 
 AntiAfk() { 
@@ -89,10 +89,6 @@ AntiAfk() {
 		Loop, Parse, matchingPIDs,% ","
 		{
 			if !WinActive("ahk_pid " A_LoopField) || ( WinActive("ahk_pid " A_LoopField) && PAUSE_SCRIPT_WHILE_GAME_ACTIVE=False ) {
-                ControlSend, ,% "{" KEY_TO_PRESS " Down}",% "ahk_pid " A_LoopField
-                Sleep,% Random(207, 708)
-                ControlSend, ,% "{" KEY_TO_PRESS " Up}",% "ahk_pid " A_LoopField
-                Sleep,% Random(207, 708)              
                 ControlSend, ,% "{" KEY_TO_PRESS " Down}",% "ahk_pid " A_LoopField
                 Sleep,% Random(207, 708)
                 ControlSend, ,% "{" KEY_TO_PRESS " Up}",% "ahk_pid " A_LoopField
@@ -187,9 +183,9 @@ Tray_PauseWhileGameActiveToggle:
     Menu,Tray,% PAUSE_SCRIPT_WHILE_GAME_ACTIVE=True?"Check":"Uncheck",Pause while game active?
 return
 Tray_Github:
-    Run,% "https://github.com/lemasato/POE-AHK-Utilities"
+    Run,% "https://github.com/TheUdK/lstark-ahk"
 Tray_Help:
-    MsgBox,4096,POE Anti AFK,All documentation is included in the source`nOpen the script in a text editor and check it out! :)
+    MsgBox,4096,Lost Ark Anti AFK,All documentation is included in the source`nOpen the script in a text editor and check it out! :)
 return
 Tray_Pause:
     suspendToggle := !suspendToggle
