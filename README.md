@@ -1,5 +1,7 @@
 # lstark-ahk
 
+lost ark anti afk ahk script
+
 ## instructions
 1. dl and inst ahk
 2. have game in windowed or borderless windowed mode
