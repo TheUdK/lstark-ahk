@@ -5,7 +5,7 @@
     If you have any question or find an issue, don't hesitate to post on GitHub!
     https://github.com/lemasato/POE-AHK-Utilities
 
-    v1.0.1
+    v1.0.2
     Lost Ark Mod by TheUdK
     https://github.com/TheUdK/lstark-ahk
     
@@ -32,7 +32,9 @@ PAUSE_SCRIPT_WHILE_GAME_ACTIVE := True ; True       The script will not press th
 
 /*  SCRIPT CONTENT STARTING HERE
     DONT EDIT UNLESS YOU KNOW WHAT YOU'RE DOING
-	
+	v1.0.2 (14 Feb 2022)
+		adapted for lost ark
+
 	v1.0.1 (07 Dec 2020)
 		Changed default "a" binding to "1" to fit default in-game bindings.
     v1.0 (03 Dec 2020)
